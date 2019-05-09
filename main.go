@@ -6,12 +6,26 @@
 package main
 
 import (
+	"fmt"
 	"github.com/btfak/sntp/netapp"
 	"github.com/btfak/sntp/netevent"
+	"os"
+	"strconv"
 )
 
 func main() {
 	var handler = netapp.GetHandler()
-	netevent.Reactor.ListenUdp(123, handler)
-	netevent.Reactor.Run()
+
+	if len(os.Args) == 2 {
+		portarg := os.Args[1]
+		port, err := strconv.Atoi(portarg)
+		if err != nil {
+			fmt.Printf("Couldn't parse `%s` as a port number\n", portarg)
+			os.Exit(1)
+		}
+		netevent.Reactor.ListenUdp(port, handler)
+		netevent.Reactor.Run()
+	} else {
+		fmt.Printf("Must specify port number: `%s` <portnumber>\n", os.Args[0])
+	}
 }

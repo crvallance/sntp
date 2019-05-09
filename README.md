@@ -18,6 +18,11 @@ Please reference  [Go install](https://github.com/astaxie/build-web-application-
 
     $ go get github.com/btfak/sntp
 
+#### Building
+* `go get github.com/sdbarker/sntp`
+* Export your Go path
+* `go build -o sntpbin`
+
 ##### More? 
 [My Blog](http://www.btfak.com)
 
