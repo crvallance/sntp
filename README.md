@@ -16,7 +16,7 @@ sntp
 Please reference  [Go install](https://github.com/astaxie/build-web-application-with-golang/blob/master/ebook/01.1.md) chapter of open-source Golang book "build-web-application-with-golang".
 
 #### Building
-* `go get github.com/sdbarker/sntp`
+* `go get github.com/crvallance/sntp`
 * Export your Go path
 * `go build -o sntpbin`
 * Rename sntpbin as needed e.g. sntpbin.exe
